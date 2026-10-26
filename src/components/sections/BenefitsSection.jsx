@@ -3,11 +3,11 @@ import { ShieldCheck, Sparkles, Droplets, RefreshCcw, Sun } from "lucide-react";
 
 export function BenefitsSection() {
   const features = [
-    { title: "Anti-Aging Lines", img: "/4.jpeg", icon: <Sparkles size={18} />, desc: "Visibly reduces fine lines and expression marks." },
-    { title: "Facial Rejuvenation", img: "/2.jpeg", icon: <RefreshCcw size={18} />, desc: "Revives dull skin for a youthful, radiant complexion." },
-    { title: "Anti Wrinkles", img: "/1.jpeg", icon: <ShieldCheck size={18} />, desc: "Fights free radicals and protects against premature aging." },
-    { title: "Cellular Regenerator", img: "/5.jpeg", icon: <Droplets size={18} />, desc: "Deeply repairs and regenerates skin cells overnight." },
-    { title: "Intensive Treatments", img: "/3.jpeg", icon: <Sun size={18} />, desc: "Targeted intensive care for stubborn pigmentation." },
+    { title: "Anti Wrinkles", img: "/1.png", icon: <ShieldCheck size={18} />, desc: "Fights free radicals and protects against premature aging." },
+    { title: "Facial Rejuvenation", img: "/2.png", icon: <RefreshCcw size={18} />, desc: "Revives dull skin for a youthful, radiant complexion." },
+    { title: "Intensive Treatments", img: "/3.png", icon: <Sun size={18} />, desc: "Targeted intensive care for stubborn pigmentation." },
+    { title: "Anti-Aging Lines", img: "/4.png", icon: <Sparkles size={18} />, desc: "Visibly reduces fine lines and expression marks." },
+    { title: "Cellular Regenerator", img: "/5.png", icon: <Droplets size={18} />, desc: "Deeply repairs and regenerates skin cells overnight." },
   ];
 
   return (

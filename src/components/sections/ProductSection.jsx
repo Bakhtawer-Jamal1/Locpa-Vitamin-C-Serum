@@ -38,8 +38,8 @@ export function ProductSection() {
           <motion.img 
             animate={{ y: [0, -15, 0] }} 
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            src="/5.jpeg" // Yahan image 5 laga di hai
-            alt="Melavin-C Vitamin C Serum" 
+            src="/1.png"
+            alt="LOCPA Vitamin C Serum" 
             className="relative z-10 h-full w-full object-cover rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-brand-gold/20 dark:border-white/10 transition-all duration-500" 
           />
         </motion.div>
@@ -50,7 +50,7 @@ export function ProductSection() {
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl font-bold text-brand-dark dark:text-white leading-tight transition-colors duration-500"
           >
-            Melavin-C <br />
+            LOCPA <br />
             <span className="text-brand-orange italic pr-2">Vitamin C Serum</span>
           </motion.h2>
           

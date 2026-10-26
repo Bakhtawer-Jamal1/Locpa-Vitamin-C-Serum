@@ -27,7 +27,7 @@ export function AboutSection() {
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
           className="mt-10 text-xl md:text-2xl leading-relaxed text-gray-500 dark:text-gray-400 font-light transition-colors duration-500"
         >
-          At Derma Vision, we believe skincare is science. Our Melavin-C serum is crafted with premium, clinically-tested ingredients like Vitamin C, Orange Stem Cell, and Hyaluronic Acid. Safe for all skin types, cruelty-free, and free from harmful chemicals.
+          At Derma Vision, we believe skincare is science. Our LOCPA serum is crafted with premium, clinically-tested ingredients like Vitamin C, Orange Stem Cell, and Hyaluronic Acid. Safe for all skin types, cruelty-free, and free from harmful chemicals.
         </motion.p>
       </div>
     </section>

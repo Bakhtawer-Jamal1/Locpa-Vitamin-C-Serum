@@ -5,7 +5,7 @@ export function WhatsAppButton() {
   // Aapka WhatsApp Number
   const phoneNumber = "923260745271";
   // Jo message user ke chat box mein pehle se likha hoga
-  const message = "Hello Derma Vision! I have a question about Melavin-C Serum.";
+  const message = "Hello Derma Vision! I have a question about LOCPA Serum.";
   
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

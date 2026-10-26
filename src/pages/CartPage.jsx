@@ -10,7 +10,7 @@ export default function CartPage() {
       <div className="flex min-h-screen flex-col items-center justify-center px-6 pt-20 bg-[#FDFBF7] dark:bg-[#1A1A1A] transition-colors duration-500">
         <h1 className="text-3xl font-bold font-serif text-brand-dark dark:text-white">Your cart is empty</h1>
         <Link to="/#products" className="mt-6">
-          <Button>Shop Melavin-C</Button>
+          <Button>Shop LOCPA</Button>
         </Link>
       </div>
     );
