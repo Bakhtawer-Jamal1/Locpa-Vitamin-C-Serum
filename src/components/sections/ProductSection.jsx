@@ -40,9 +40,11 @@ export function ProductSection() {
           <motion.img 
             animate={{ y: [0, -15, 0] }} 
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            src="/1.png"
+            src="/1.webp"
             alt="LOCPA Vitamin C Serum" 
             className="relative z-10 h-full w-full object-cover rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-brand-gold/20 dark:border-white/10 transition-all duration-500" 
+            loading="lazy"
+            decoding="async"
           />
         </motion.div>
 

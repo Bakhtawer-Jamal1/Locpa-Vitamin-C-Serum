@@ -10,11 +10,11 @@ export function Footer() {
           {/* Logo & Brand */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="flex flex-col items-center md:items-start"
+            className="flex flex-col items-center"
           >
             {/* Logo apne original colors mein rahega, koi invert nahi hoga */}
-            <img src="/derma-vision-logo.svg" alt="Derma Vision" className="h-14 object-contain mb-4" />
-            <p className="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase">
+            <img src="/derma-vision-logo.webp" alt="Derma Vision" className="mb-4 h-auto w-32 object-contain sm:w-36" loading="lazy" decoding="async" />
+            <p className="text-center text-brand-orange text-xs font-bold tracking-[0.2em] uppercase">
               A New Vision in Dermatology
             </p>
           </motion.div>

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 export function HeroSection() {
   const ref = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
-  const slides = ["/5.png", "/4.png", "/3.png"];
+  const slides = ["/6.webp?v=20261029-2", "/5.webp", "/4.webp"];
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -18,8 +18,6 @@ export function HeroSection() {
   
   // Scroll effects
   const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <section id="home" ref={ref} className="relative flex h-screen min-h-[36rem] w-full items-center justify-center overflow-hidden bg-black px-4 sm:px-6">
@@ -37,7 +35,10 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
-          className="h-full w-full object-cover object-[center_35%] sm:object-[center_30%]"
+          className={`h-full w-full object-cover ${slides[activeSlide].startsWith("/6.webp") ? "object-[center_55%]" : "object-[center_35%] sm:object-[center_30%]"}`}
+          loading="eager"
+          fetchPriority={activeSlide === 0 ? "high" : "auto"}
+          decoding="async"
         />
       </motion.div>
       
@@ -47,8 +48,7 @@ export function HeroSection() {
 
       {/* Hero Content */}
       <motion.div 
-        style={{ y: textY, opacity, willChange: "transform, opacity" }}
-        className="absolute bottom-[4.25rem] left-5 z-10 flex w-[calc(100%-2.5rem)] max-w-7xl flex-col items-start text-left sm:relative sm:bottom-auto sm:left-auto sm:mx-auto sm:mt-16 sm:w-full sm:px-6 md:mt-20 md:px-12"
+        className="absolute bottom-[4.25rem] left-5 z-10 flex w-[calc(100%-2.5rem)] max-w-7xl flex-col items-start text-left sm:bottom-[5.5rem] sm:left-6 sm:w-[calc(100%-3rem)] md:bottom-[7rem] md:left-10 md:w-[calc(100%-5rem)]"
       >
         <motion.p 
           initial={{ opacity: 0, y: 20 }} 

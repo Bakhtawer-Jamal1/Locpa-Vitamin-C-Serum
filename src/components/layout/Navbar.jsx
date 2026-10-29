@@ -40,10 +40,11 @@ export function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 z-50">
           <img 
-            src="/derma-vision-logo.svg" 
+            src="/derma-vision-logo.webp" 
             alt="Derma Vision" 
             // Logo hamesha dark/black rahega kyunke background white hai
-            className={`object-contain transition-all duration-300 ${isScrolled ? "h-10" : "h-12"}`} 
+            className={`h-auto w-28 object-contain transition-all duration-300 sm:w-32 ${isScrolled ? "max-h-12" : "max-h-14"}`} 
+            decoding="async"
           />
         </Link>
         

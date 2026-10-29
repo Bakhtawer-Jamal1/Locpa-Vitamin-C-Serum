@@ -3,11 +3,12 @@ import { ShieldCheck, Sparkles, Droplets, RefreshCcw, Sun } from "lucide-react";
 
 export function BenefitsSection() {
   const features = [
-    { title: "Anti Wrinkles", img: "/1.png", icon: <ShieldCheck size={18} />, desc: "Fights free radicals and protects against premature aging." },
-    { title: "Facial Rejuvenation", img: "/2.png", icon: <RefreshCcw size={18} />, desc: "Revives dull skin for a youthful, radiant complexion." },
-    { title: "Intensive Treatments", img: "/3.png", icon: <Sun size={18} />, desc: "Targeted intensive care for stubborn pigmentation." },
-    { title: "Anti-Aging Lines", img: "/4.png", icon: <Sparkles size={18} />, desc: "Visibly reduces fine lines and expression marks." },
-    { title: "Cellular Regenerator", img: "/5.png", icon: <Droplets size={18} />, desc: "Deeply repairs and regenerates skin cells overnight." },
+    { title: "Anti Wrinkles", img: "/1.webp", icon: <ShieldCheck size={18} />, desc: "Fights free radicals and protects against premature aging." },
+    { title: "Facial Rejuvenation", img: "/2.webp", icon: <RefreshCcw size={18} />, desc: "Revives dull skin for a youthful, radiant complexion." },
+    { title: "Intensive Treatments", img: "/3.webp", icon: <Sun size={18} />, desc: "Targeted intensive care for stubborn pigmentation." },
+    { title: "Anti-Aging Lines", img: "/4.webp", icon: <Sparkles size={18} />, desc: "Visibly reduces fine lines and expression marks." },
+    { title: "Cellular Regenerator", img: "/5.webp", icon: <Droplets size={18} />, desc: "Deeply repairs and regenerates skin cells overnight." },
+    { title: "For Better skin tone", img: "/6.webp", icon: <Sun size={18} />, desc: "Helps brighten the look of skin for a more even, radiant tone." },
   ];
 
   return (
@@ -35,6 +36,8 @@ export function BenefitsSection() {
                   src={item.img} 
                   alt={item.title} 
                   className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" 
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#1A1A1A] via-white/20 dark:via-[#1A1A1A]/20 to-transparent transition-colors duration-500" />
                 <div className="absolute bottom-4 left-4 h-10 w-10 rounded-full bg-brand-orange flex items-center justify-center text-white shadow-lg z-10">
