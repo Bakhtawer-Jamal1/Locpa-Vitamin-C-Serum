@@ -48,7 +48,7 @@ export function HeroSection() {
       {/* Hero Content */}
       <motion.div 
         style={{ y: textY, opacity, willChange: "transform, opacity" }}
-        className="relative z-10 mx-auto mt-16 flex w-full max-w-7xl flex-col items-start px-1 text-left sm:px-6 md:mt-20 md:px-12"
+        className="absolute bottom-[4.25rem] left-5 z-10 flex w-[calc(100%-2.5rem)] max-w-7xl flex-col items-start text-left sm:relative sm:bottom-auto sm:left-auto sm:mx-auto sm:mt-16 sm:w-full sm:px-6 md:mt-20 md:px-12"
       >
         <motion.p 
           initial={{ opacity: 0, y: 20 }} 

@@ -1,11 +1,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { products } from "../../data/products";
 import { useCart } from "../../context/CartContext";
 import { CheckCircle2 } from "lucide-react";
 
 export function ProductSection() {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
   const ref = useRef(null);
   
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
@@ -80,7 +82,10 @@ export function ProductSection() {
           >
             <span className="text-4xl font-light text-brand-dark dark:text-white transition-colors duration-500">Rs. {products[0].price}</span>
             <button 
-              onClick={() => addToCart(products[0])} 
+              onClick={() => {
+                addToCart(products[0]);
+                navigate("/cart");
+              }}
               className="w-full sm:w-auto rounded-full bg-brand-dark dark:bg-white text-white dark:text-brand-dark px-10 py-4 text-sm uppercase tracking-widest font-bold hover:bg-brand-orange dark:hover:bg-brand-orange dark:hover:text-white transition-all duration-300 shadow-xl hover:shadow-brand-orange/30"
             >
               Add to Cart

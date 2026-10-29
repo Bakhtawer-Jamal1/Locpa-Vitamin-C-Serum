@@ -12,15 +12,14 @@ export const checkoutSchema = z.object({
 export function buildWhatsAppLink(payload) {
   const { fullName, email, mobile, address, city, paymentMethod, items, total, orderId } = payload;
   
-  const paymentLabel = 
-    paymentMethod === "cod" ? "Cash on Delivery" : 
-    paymentMethod === "jazzcash" ? "JazzCash (Payment Sent)" : 
-    "Easypaisa (Payment Sent)";
+  const paymentLabel =
+    paymentMethod === "cod" ? "Cash on Delivery" :
+    paymentMethod === "jazzcash" ? "JazzCash" :
+    "Easypaisa";
 
-  const itemLines = items.map((item) => `• ${item.name} × ${item.quantity} — Rs. ${(item.price * item.quantity).toFixed(2)}`).join("\n");
+  const itemLines = items.map((item) => `- ${item.name} x ${item.quantity} - Rs. ${(item.price * item.quantity).toFixed(2)}`).join("\n");
 
-  const message = `
-🛒 *New Order: Derma Vision*
+  const message = `🛒 *New Order: Derma Vision*
 Order ID: ${orderId}
 
 👤 *Customer Details*
@@ -31,17 +30,15 @@ Address: ${address}, ${city}
 
 💳 *Payment Method*
 ${paymentLabel}
-${paymentMethod !== "cod" ? "\n*(Please find my payment screenshot attached below)*" : ""}
 
 📦 *Items*
 ${itemLines}
 
 💰 *Total: Rs. ${total.toFixed(2)}*
 
-Please confirm my order. Thank you!
-  `.trim();
+Please confirm my order. Thank you!`;
 
-  const YOUR_WHATSAPP_NUMBER = "923260745271"; 
+  const recipient = "923260745271";
 
-  return `https://wa.me/${YOUR_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${recipient}?text=${encodeURIComponent(message)}`;
 }

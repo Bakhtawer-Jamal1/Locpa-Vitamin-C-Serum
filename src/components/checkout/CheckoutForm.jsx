@@ -2,7 +2,7 @@ import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
-import { checkoutSchema } from "../../lib/whatsapp";
+import { checkoutSchema } from "../../lib/orderNotification";
 import { Copy, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 
@@ -18,6 +18,16 @@ export function CheckoutForm({ onSubmit, isSubmitting }) {
   // Aapka JazzCash / Easypaisa Account Number
   const accountNumber = "03494683949";
 
+  const handleFormSubmit = (event) => {
+    const whatsappTab = window.open("about:blank", "_blank");
+    if (whatsappTab) whatsappTab.opener = null;
+
+    void handleSubmit(
+      (formData) => onSubmit(formData, whatsappTab),
+      () => whatsappTab?.close()
+    )(event);
+  };
+
   const copyToClipboard = () => {
     navigator.clipboard.writeText(accountNumber);
     setCopied(true);
@@ -25,7 +35,7 @@ export function CheckoutForm({ onSubmit, isSubmitting }) {
   };
 
   return (
-    <motion.form initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} onSubmit={handleSubmit(onSubmit)} className="space-y-5 bg-white dark:bg-[#242424] p-6 sm:p-8 rounded-2xl shadow-xl border border-brand-gold/20 dark:border-white/10 transition-colors duration-500">
+    <motion.form initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} onSubmit={handleFormSubmit} className="space-y-5 bg-white dark:bg-[#242424] p-6 sm:p-8 rounded-2xl shadow-xl border border-brand-gold/20 dark:border-white/10 transition-colors duration-500">
       <h2 className="text-2xl font-serif font-bold text-brand-dark dark:text-white transition-colors duration-500">Shipping Details</h2>
       
       <div>
@@ -96,13 +106,13 @@ export function CheckoutForm({ onSubmit, isSubmitting }) {
             </button>
           </div>
           <p className="text-xs text-brand-orange font-bold mt-3">
-            ⚠️ IMPORTANT: After sending the payment, click the button below. You must attach the payment screenshot in WhatsApp to confirm your order.
+            ⚠️ IMPORTANT: After sending the payment, click the button below and attach your payment screenshot in WhatsApp.
           </p>
         </motion.div>
       )}
 
       <Button type="submit" disabled={isSubmitting} className="w-full py-4 text-lg mt-6 shadow-lg shadow-brand-orange/30">
-        {isSubmitting ? "Processing..." : "Place Order via WhatsApp"}
+        {isSubmitting ? "Preparing your order..." : "Confirm Order on WhatsApp"}
       </Button>
     </motion.form>
   );
