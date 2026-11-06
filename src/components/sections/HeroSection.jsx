@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const slides = [
   { src: "/5.webp", alt: "LOCPA Vitamin C Serum skincare" },
   { src: "/4.webp", alt: "LOCPA Vitamin C Serum with oranges" },
-  { src: "/6.webp?v=20261029-2", alt: "LOCPA Vitamin C Serum product banner" },
+  { src: "/6-sized.png", alt: "LOCPA Vitamin C Serum product banner" },
 ];
 
 export function HeroSection() {

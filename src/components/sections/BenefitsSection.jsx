@@ -8,7 +8,7 @@ export function BenefitsSection() {
     { title: "Intensive Treatments", img: "/3.webp", icon: <Sun size={18} />, desc: "Targeted intensive care for stubborn pigmentation." },
     { title: "Anti-Aging Lines", img: "/4.webp", icon: <Sparkles size={18} />, desc: "Visibly reduces fine lines and expression marks." },
     { title: "Cellular Regenerator", img: "/5.webp", icon: <Droplets size={18} />, desc: "Deeply repairs and regenerates skin cells overnight." },
-    { title: "For Better skin tone", img: "/6.webp", icon: <Sun size={18} />, desc: "Helps brighten the look of skin for a more even, radiant tone." },
+    { title: "For Better skin tone", img: "/6-sized.png", icon: <Sun size={18} />, desc: "Helps brighten the look of skin for a more even, radiant tone." },
   ];
 
   return (
