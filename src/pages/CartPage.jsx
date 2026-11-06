@@ -98,7 +98,12 @@ export default function CartPage() {
               <img src={item.image} alt={item.name} className="h-24 w-24 rounded-lg object-cover" />
               <div className="flex-1 text-center sm:text-left">
                 <h2 className="text-lg font-bold text-brand-dark dark:text-white">{item.name}</h2>
-                <p className="font-semibold text-brand-orange">Rs. {item.price}</p>
+                <div className="flex items-baseline justify-center gap-2 sm:justify-start">
+                  <p className="font-semibold text-brand-orange">Rs. {item.price.toLocaleString("en-PK")}</p>
+                  {item.originalPrice && (
+                    <p className="text-sm text-gray-500 line-through decoration-2">Rs. {item.originalPrice.toLocaleString("en-PK")}</p>
+                  )}
+                </div>
               </div>
               <div className="flex items-center gap-3">
                 <button onClick={() => updateQuantity(item.id, item.quantity - 1)} aria-label={`Decrease ${item.name} quantity`} className="h-8 w-8 rounded-full border border-gray-300 text-brand-dark transition-colors hover:bg-gray-100 dark:border-gray-600 dark:text-white dark:hover:bg-gray-800">−</button>
@@ -110,7 +115,7 @@ export default function CartPage() {
           ))}
           <div className="flex justify-between border-t border-gray-300 pt-5 dark:border-gray-700">
             <span className="text-xl font-bold text-brand-dark dark:text-white">Total</span>
-            <span className="text-2xl font-bold text-brand-orange">Rs. {totalPrice.toFixed(2)}</span>
+            <span className="text-2xl font-bold text-brand-orange">Rs. {totalPrice.toLocaleString("en-PK", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
           </div>
         </section>
 
